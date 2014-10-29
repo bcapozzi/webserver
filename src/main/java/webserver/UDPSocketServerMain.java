@@ -38,9 +38,10 @@ public class UDPSocketServerMain {
 			System.out.println("Streaming video from file: " + filename + " to host: " + hostname + " on port: " + port);
 			
 			UDPSocketServer server = new UDPSocketServer();
-			server.start("localhost", port, filename, 1316);
+			server.start(hostname, port, filename, 1316);
 			
-			Thread.sleep(240*1000L);
+			Thread.sleep(30*1000L);
+			System.out.println("Shutting down...");
 			server.stop();
 		}
 		catch (Exception e) {
